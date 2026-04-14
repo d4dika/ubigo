@@ -1,0 +1,1096 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UBI.GO - Your Daily Healthy Partner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23f97316'/><text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold' font-size='60'>U</text></svg>"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        background-color: #fdfcf0;
+        color: #1a3c2f;
+      }
+      .text-kuwut {
+        color: #d4e157;
+      }
+      .bg-dark-green {
+        background-color: #1a3c2f;
+      }
+
+      /* Smooth Scroll Margin agar tidak tertutup Navbar */
+      section {
+        scroll-margin-top: 100px;
+      }
+
+      @keyframes spin-slow {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .animate-spin-slow {
+        animation: spin-slow 12s linear infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-100 z-[100]"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-2">
+          <div
+            class="w-9 h-9 bg-orange-500 rounded-lg flex items-center justify-center shadow-lg"
+          >
+            <span class="text-white font-bold text-xl">U</span>
+          </div>
+          <span class="text-xl font-extrabold text-[#4A204D] tracking-tight"
+            >UBI.<span class="text-orange-500">GO</span></span
+          >
+        </div>
+
+        <ul class="hidden md:flex gap-10 text-[#5C5C5C] font-semibold">
+          <li>
+            <a href="#" class="hover:text-orange-500 transition">Beranda</a>
+          </li>
+          <li>
+            <a href="#menu" class="hover:text-orange-500 transition">Menu</a>
+          </li>
+          <li>
+            <a href="#testimoni" class="hover:text-orange-500 transition"
+              >Testimoni</a
+            >
+          </li>
+        </ul>
+
+        <div class="hidden md:block">
+          <a
+            href="#menu"
+            class="px-7 py-2.5 bg-[#4A204D] text-white rounded-full font-bold hover:scale-105 transition shadow-md inline-block"
+          >
+            Order Now →
+          </a>
+        </div>
+
+        <button class="md:hidden text-[#4A204D]" id="mobile-menu-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div class="h-20"></div>
+
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-[150] invisible transition-all duration-300 md:hidden"
+    >
+      <div
+        id="menu-backdrop"
+        class="absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300"
+      ></div>
+
+      <div
+        id="menu-drawer"
+        class="absolute top-0 right-0 w-[75%] max-w-[300px] h-full bg-[#4A204D] translate-x-full transition-transform duration-300 shadow-2xl flex flex-col p-8"
+      >
+        <div class="flex justify-between items-center mb-12">
+          <span class="text-xl font-extrabold text-white tracking-tight"
+            >UBI<span class="text-orange-500">GO</span></span
+          >
+          <button
+            id="close-menu"
+            class="text-white hover:rotate-90 transition-transform"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <ul class="flex flex-col gap-8 text-white text-xl font-bold">
+          <li><a href="#" class="mobile-link">Beranda</a></li>
+          <li><a href="#menu" class="mobile-link">Menu</a></li>
+          <li><a href="#testimoni" class="mobile-link">Testimoni</a></li>
+          <li><a href="#lokasi" class="mobile-link">Lokasi</a></li>
+        </ul>
+
+        <div class="mt-auto">
+          <a
+            href="#menu"
+            class="mobile-link block w-full py-4 bg-orange-500 text-white text-center rounded-2xl font-bold"
+          >
+            Order Now →
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Akhir Navbar -->
+
+    <!-- Header -->
+    <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+      <div
+        class="relative bg-dark-green rounded-[40px] overflow-hidden min-h-[500px] md:min-h-[600px] flex items-center"
+      >
+        <div
+          class="absolute inset-0 md:left-1/3 w-full h-full"
+          data-aos="fade"
+          data-aos-duration="1000"
+        >
+          <img
+            src="https://imgsrv2.voi.id/qF7ncw_1gTRDzTaMCFMRILOHTzGR7odGNZJm6n4z7Ns/auto/1280/853/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy8yMDAyNTkvMjAyMjA4MTExNzM1LW1haW4uY3JvcHBlZF8xNjYwMjE0MjAzLmpwZw.jpg"
+            alt="Ubi Crispy"
+            class="w-full h-full object-cover opacity-30 md:opacity-80 object-center"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-dark-green via-dark-green/60 to-transparent"
+          ></div>
+        </div>
+
+        <div class="relative z-10 w-full md:w-3/5 p-8 md:p-20">
+          <div
+            class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full mb-8"
+            data-aos="fade-down"
+            data-aos-delay="100"
+            data-aos-offset="10"
+          >
+            <span class="text-orange-400">★</span>
+            <span
+              class="text-white text-xs md:text-sm font-medium tracking-wide uppercase"
+              >Camilan Hits Surabaya</span
+            >
+          </div>
+
+          <h1
+            class="text-4xl md:text-7xl font-bold text-white leading-[1.1]"
+            data-aos="fade-right"
+            data-aos-delay="300"
+            data-aos-offset="10"
+          >
+            Your Daily <br />
+            <span class="text-kuwut italic font-serif">Healthy Partner</span>
+          </h1>
+
+          <p
+            class="text-gray-300 mt-6 text-base md:text-lg max-w-md leading-relaxed"
+            data-aos="fade-right"
+            data-aos-delay="500"
+            data-aos-offset="10"
+          >
+            Perpaduan sempurna antara renyahnya
+            <strong>Ubi Crispy</strong> pilihan dan segarnya
+            <strong>Es Kuwut</strong> melon yang melegenda.
+          </p>
+
+          <div
+            class="mt-10 flex flex-col sm:flex-row gap-4"
+            data-aos="fade-up"
+            data-aos-delay="700"
+            data-aos-offset="10"
+          >
+            <a
+              href="#menu"
+              class="bg-orange-500 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-orange-600 transition shadow-xl shadow-orange-900/20 text-center inline-block"
+            >
+              Cek Menu
+            </a>
+
+            <a
+              href="#lokasi"
+              class="border border-white/30 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition text-center inline-block"
+            >
+              Lokasi Kami
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="absolute top-8 right-8 hidden lg:block"
+          data-aos="fade"
+          data-aos-delay="900"
+        >
+          <div
+            class="w-24 h-24 border-2 border-dashed border-kuwut/30 rounded-full animate-spin-slow"
+          ></div>
+        </div>
+      </div>
+    </header>
+    <!-- Akhir Header -->
+
+    <!-- Produk -->
+    <section class="max-w-7xl mx-auto px-6 py-20 relative overflow-hidden">
+      <div
+        class="absolute -top-10 -right-10 opacity-10 pointer-events-none"
+        data-aos="fade-left"
+        data-aos-duration="1000"
+      >
+        <svg width="200" height="200" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="40" fill="#D4E157" />
+        </svg>
+      </div>
+
+      <div id="menu" class="mb-12" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#4A204D]">
+          Menu Andalan Kami
+        </h2>
+        <p class="text-gray-500 mt-2">
+          Pilih favoritmu dan rasakan kelezatannya!
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div
+          class="group bg-white rounded-[32px] p-6 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <span
+            class="absolute top-4 left-4 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10"
+            >Best Seller</span
+          >
+
+          <div
+            class="aspect-square rounded-[24px] overflow-hidden mb-6 bg-[#FDFCF0]"
+          >
+            <img
+              src="https://cdn.yummy.co.id/content-images/images/20210112/Zgqx8gHvpvaldw7E4wvg2dUXbGBwmkCW-31363130333935333233d41d8cd98f00b204e9800998ecf8427e.jpg?x-oss-process=image/resize,w_388,h_388,m_fixed,x-oss-process=image/format,webp"
+              alt="Ubi Crispy"
+              class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+            />
+          </div>
+
+          <div class="flex justify-between items-end">
+            <div>
+              <h3 class="text-2xl font-bold text-[#4A204D]">Ubi Crispy</h3>
+              <p class="text-gray-400 text-sm mt-1 italic">
+                Crunchy di luar, lembut di dalam
+              </p>
+              <div class="mt-4 flex items-baseline gap-1">
+                <span class="text-sm font-semibold text-[#4A204D]">Rp</span>
+                <span class="text-3xl font-bold text-[#4A204D]">15.000</span>
+              </div>
+            </div>
+
+            <a
+              href="https://wa.me/628123456789?text=Halo%20UBIGO,%20saya%20mau%20pesan%20Ubi%20Crispy"
+              target="_blank"
+              class="bg-[#4A204D] p-4 rounded-2xl hover:bg-[#632B6C] transition shadow-lg group-hover:rotate-6"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div
+          id="kuwut"
+          class="group bg-white rounded-[32px] p-6 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <div
+            class="aspect-square rounded-[24px] overflow-hidden mb-6 bg-[#F1F8E9]"
+          >
+            <img
+              src="https://o-cdf.oramiland.com/unsafe/cnc-magazine.oramiland.com/parenting/original_images/Es_Kuwut_Bali.jpg"
+              alt="Es Kuwut Melon"
+              class="w-full h-full object-cover scale-110 group-hover:scale-125 transition duration-500"
+            />
+          </div>
+
+          <div class="flex justify-between items-end">
+            <div>
+              <h3 class="text-2xl font-bold text-[#4A204D]">Es Kuwut Melon</h3>
+              <p class="text-gray-400 text-sm mt-1 italic">
+                Segarnya melon & perasan jeruk nipis
+              </p>
+              <div class="mt-4 flex items-baseline gap-1">
+                <span class="text-sm font-semibold text-[#4A204D]">Rp</span>
+                <span class="text-3xl font-bold text-[#4A204D]">10.000</span>
+              </div>
+            </div>
+
+            <a
+              href="https://wa.me/628123456789?text=Halo%20UBIGO,%20saya%20mau%20pesan%20Es%20Kuwut%20Melon"
+              target="_blank"
+              class="bg-[#D4E157] p-4 rounded-2xl hover:bg-[#C0CA33] transition shadow-lg group-hover:-rotate-6"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-[#1A3C2F]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Akhir Produk -->
+
+    <!-- Ubi Section -->
+    <section
+      class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-12 overflow-hidden"
+    >
+      <div class="w-full md:w-1/2 order-2 md:order-1">
+        <h2
+          class="text-4xl md:text-6xl font-bold text-[#4A204D] leading-tight mb-6"
+          data-aos="fade-right"
+        >
+          Ubi Renyah, <br />
+          <span class="text-orange-500 italic">Mood Auto Enak.</span>
+        </h2>
+
+        <p
+          class="text-gray-600 text-lg mb-10 leading-relaxed max-w-md"
+          data-aos="fade-right"
+          data-aos-delay="200"
+        >
+          Dibuat dari ubi jalar pilihan yang diproses dengan teknik
+          <span class="font-bold text-[#4A204D]">deep-fry</span>
+          khusus untuk menghasilkan sensasi kriuk yang tahan lama tanpa
+          menghilangkan rasa manis alaminya.
+        </p>
+
+        <a
+          href="#menu"
+          class="inline-flex items-center gap-3 bg-orange-500 text-white px-8 py-4 rounded-full font-bold shadow-lg hover:bg-orange-600 transition group"
+          data-aos="fade-up"
+          data-aos-delay="400"
+          data-aos-offset="50"
+        >
+          Coba Sekarang
+          <div
+            class="bg-white text-orange-500 rounded-full p-1 group-hover:translate-x-1 transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </div>
+        </a>
+
+        <div
+          class="mt-12 bg-orange-100/50 border border-orange-200 p-4 rounded-3xl flex items-center gap-4 w-fit shadow-sm relative"
+          data-aos="zoom-in-up"
+          data-aos-delay="600"
+          data-aos-offset="10"
+        >
+          <div class="flex -space-x-3">
+            <div
+              class="w-10 h-10 rounded-full border-2 border-white bg-gray-300"
+            ></div>
+            <div
+              class="w-10 h-10 rounded-full border-2 border-white bg-gray-400"
+            ></div>
+            <div
+              class="w-10 h-10 rounded-full border-2 border-white bg-gray-500"
+            ></div>
+          </div>
+          <div>
+            <p class="text-[#4A204D] font-bold leading-none">100+ Customers</p>
+            <p class="text-xs text-orange-700 mt-1">Suka sama kriuknya!</p>
+          </div>
+          <div
+            class="absolute -bottom-1 -right-1 w-full h-full bg-orange-200/40 -z-10 rounded-3xl"
+          ></div>
+        </div>
+      </div>
+
+      <div class="w-full md:w-1/2 order-1 md:order-2 relative">
+        <div
+          class="absolute top-10 right-0 w-[85%] h-full bg-[#D4E157]/20 rounded-[40px] -z-10 transform translate-x-4 translate-y-4"
+          data-aos="fade-left"
+          data-aos-delay="200"
+        ></div>
+
+        <div
+          class="relative rounded-[40px] overflow-hidden shadow-2xl border-8 border-white"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+        >
+          <img
+            src="https://down-id.img.susercontent.com/file/10063c17f5bfedd14e572d384670e0fa"
+            alt="Ubi Crispy UBIGO"
+            class="w-full h-[450px] object-cover"
+          />
+        </div>
+
+        <div
+          class="absolute -top-6 -right-6 md:right-0 bg-orange-500 text-white p-6 rounded-full w-24 h-24 flex items-center justify-center text-center text-[10px] font-bold leading-tight rotate-12 shadow-xl border-4 border-white animate-bounce"
+          data-aos="zoom-in"
+          data-aos-delay="800"
+        >
+          RENYAH PARAH!
+        </div>
+
+        <div
+          class="absolute -bottom-10 left-0 text-orange-300 opacity-50"
+          data-aos="fade"
+          data-aos-delay="1000"
+        >
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"
+            />
+          </svg>
+        </div>
+      </div>
+    </section>
+    <!-- Akhir Ubi Section -->
+
+    <!-- Es Kuwut -->
+    <section
+      class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row gap-6 items-stretch overflow-hidden"
+    >
+      <div
+        class="w-full md:w-1/2 flex"
+        data-aos="fade-right"
+        data-aos-duration="1000"
+      >
+        <div
+          class="w-full h-[300px] md:h-full rounded-[48px] overflow-hidden shadow-lg border-4 border-white"
+        >
+          <img
+            src="https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2023/07/20084441/Asam-Manis-Segar-Ini-Resep-Es-Kuwut-Khas-Bali.jpg.webp"
+            alt="Es Kuwut Melon UBIGO"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+
+      <div
+        class="w-full md:w-1/2 bg-[#2D4D32] rounded-[48px] p-10 md:p-16 flex flex-col justify-center text-center relative overflow-hidden"
+        data-aos="fade-left"
+        data-aos-duration="1000"
+      >
+        <div
+          class="absolute bottom-6 right-6 text-[#D4E157] opacity-40"
+          data-aos="fade-up"
+          data-aos-delay="600"
+        >
+          <svg
+            width="100"
+            height="100"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          >
+            <path
+              d="M12 22C12 22 12 18 12 15M12 15C12 15 16 11 19 11M12 15C12 15 8 11 5 11M12 15V8M12 8C12 8 15 4 15 2M12 8C12 8 9 4 9 2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
+
+        <h2
+          class="text-3xl md:text-5xl font-bold text-white leading-tight"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          Ready to refresh <br />
+          <span class="text-[#D4E157] italic">your day?</span>
+        </h2>
+
+        <p
+          class="text-gray-300 mt-6 text-base md:text-lg"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          Kesegaran melon serut, kelapa muda, dan perasan jeruk nipis yang siap
+          mengusir dahaga seketika.
+        </p>
+
+        <div
+          class="mt-10 flex justify-center"
+          data-aos="zoom-in"
+          data-aos-delay="600"
+          data-aos-offset="0"
+        >
+          <a
+            href="#kuwut"
+            class="inline-flex items-center gap-4 bg-orange-500 text-white px-10 py-4 rounded-full font-bold shadow-xl hover:scale-105 transition duration-300 group"
+          >
+            Order Now
+            <div
+              class="bg-white text-orange-500 rounded-full p-1 group-hover:translate-x-1 transition"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="3"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </div>
+          </a>
+        </div>
+
+        <div
+          class="absolute bottom-10 left-10 text-orange-400 opacity-60 animate-pulse"
+          data-aos="fade"
+          data-aos-delay="800"
+        >
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0L14 8L22 12L14 16L12 24L10 16L2 12L10 8L12 0Z" />
+          </svg>
+        </div>
+      </div>
+    </section>
+    <!-- Akhir Es Kuwut -->
+
+    <!-- Testimoni -->
+    <section class="max-w-7xl mx-auto px-6 py-24 relative overflow-hidden">
+      <div class="absolute top-0 right-0 -z-10 opacity-5">
+        <svg width="300" height="300" viewBox="0 0 100 100" fill="#632B6C">
+          <path d="M50 0 L60 40 L100 50 L60 60 L50 100 L40 60 L0 50 L40 40 Z" />
+        </svg>
+      </div>
+
+      <div id="testimoni" class="text-center mb-16" data-aos="fade-down">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#4A204D]">
+          Hear From Our Clients
+        </h2>
+        <p
+          class="text-gray-500 mt-4 max-w-xl mx-auto italic text-lg"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          "Kata mereka yang sudah ketagihan renyahnya Ubi Crispy dan segarnya Es
+          Kuwut UBIGO."
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div
+          class="bg-white p-8 rounded-[40px] shadow-sm border border-gray-100 relative group hover:shadow-xl transition-all duration-300"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <div class="flex gap-1 mb-4 text-orange-400">
+            <span>★</span><span>★</span><span>★</span><span>★</span
+            ><span>★</span>
+          </div>
+          <p class="text-[#4A204D] leading-relaxed mb-8 italic">
+            "Ubi crispy-nya beneran renyah sampai sore! Pas banget
+            dikombinasikan sama Es Kuwut pas lagi panas-panasnya Surabaya."
+          </p>
+          <div class="flex items-center gap-4 border-t pt-6">
+            <div
+              class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center font-bold text-orange-600"
+            >
+              D
+            </div>
+            <div>
+              <h4 class="font-bold text-[#4A204D]">Dika M.</h4>
+              <p class="text-xs text-gray-400">Mahasiswa IT</p>
+            </div>
+          </div>
+          <div
+            class="absolute bottom-4 right-6 text-[#D4E157] opacity-20 group-hover:rotate-12 transition"
+          >
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17,8C8,10 5,16 5,16C5,16 7,20 12,20C17,20 19,16 19,16C19,16 20,12 17,8Z"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <div
+          class="bg-[#632B6C] p-8 rounded-[40px] shadow-xl relative transform md:-translate-y-4"
+          data-aos="fade-up"
+          data-aos-delay="500"
+        >
+          <div class="flex gap-1 mb-4 text-yellow-400">
+            <span>★</span><span>★</span><span>★</span><span>★</span
+            ><span>★</span>
+          </div>
+          <p class="text-white leading-relaxed mb-8 italic">
+            "Harganya affordable banget buat kantong pelajar. Es kuwutnya asli
+            seger banget, melonnya kerasa!"
+          </p>
+          <div class="flex items-center gap-4 border-t border-white/20 pt-6">
+            <div
+              class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center font-bold text-white"
+            >
+              S
+            </div>
+            <div>
+              <h4 class="font-bold text-white">Salsa</h4>
+              <p class="text-xs text-purple-200">Karyawan Swasta</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white p-8 rounded-[40px] shadow-sm border border-gray-100 relative group hover:shadow-xl transition-all duration-300"
+          data-aos="fade-up"
+          data-aos-delay="700"
+        >
+          <div class="flex gap-1 mb-4 text-orange-400">
+            <span>★</span><span>★</span><span>★</span><span>★</span
+            ><span>★</span>
+          </div>
+          <p class="text-[#4A204D] leading-relaxed mb-8 italic">
+            "Packaging-nya rapi, ubinya nggak berminyak berlebih. Recommended
+            banget buat camilan sore."
+          </p>
+          <div class="flex items-center gap-4 border-t pt-6">
+            <div
+              class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center font-bold text-green-600"
+            >
+              R
+            </div>
+            <div>
+              <h4 class="font-bold text-[#4A204D]">Rian</h4>
+              <p class="text-xs text-gray-400">Wirausaha</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Akhir Testimoni -->
+
+    <!-- Lokasi -->
+    <section class="max-w-7xl mx-auto px-6 py-24">
+      <div
+        id="lokasi"
+        class="bg-white rounded-[48px] overflow-hidden shadow-xl border border-gray-100 flex flex-col md:flex-row items-stretch"
+        data-aos="fade-up"
+      >
+        <div class="w-full md:w-2/5 p-10 md:p-16 flex flex-col justify-center">
+          <div
+            class="bg-[#D4E157]/20 text-[#2D4D32] px-4 py-1 rounded-full text-xs font-bold w-fit mb-6 uppercase tracking-wider"
+            data-aos="fade-right"
+            data-aos-delay="200"
+          >
+            Visit Us
+          </div>
+
+          <h2
+            class="text-3xl md:text-4xl font-bold text-[#4A204D] leading-tight"
+            data-aos="fade-right"
+            data-aos-delay="400"
+          >
+            Mampir ke Gerai Kami
+          </h2>
+
+          <div class="mt-10 space-y-6">
+            <div
+              class="flex items-start gap-4"
+              data-aos="fade-up"
+              data-aos-delay="700"
+            >
+              <div class="bg-orange-100 p-3 rounded-2xl text-orange-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-[#4A204D]">Alamat</h4>
+                <p class="text-gray-500">
+                  Jl. Ketintang No.156, Gayungan, Surabaya, Jawa Timur 60231
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-start gap-4"
+              data-aos="fade-up"
+              data-aos-delay="800"
+            >
+              <div class="bg-purple-100 p-3 rounded-2xl text-[#632B6C]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-[#4A204D]">Jam Operasional</h4>
+                <p class="text-gray-500">
+                  Senin - Jumat: 08.00 – 16.30 WIB<br />Sabtu: 08.00 – 14.00 WIB
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-12" data-aos="fade-up" data-aos-delay="900">
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Telkom+University+Surabaya"
+              target="_blank"
+              class="text-orange-500 font-bold flex items-center gap-2 hover:underline"
+            >
+              Buka di Google Maps
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="w-full md:w-3/5 bg-gray-100 relative min-h-[400px]"
+          data-aos="fade-left"
+          data-aos-delay="400"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.369018440742!2d112.72634007460621!3d-7.311166492696952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fbd1cbd26a1d%3A0x1dbe0b0b2e9b059f!2sUniversitas%20Telkom%20Surabaya!5e0!3m2!1sid!2sid!4v1712123456789!5m2!1sid!2sid"
+            class="absolute inset-0 w-full h-full border-0 grayscale hover:grayscale-0 transition duration-500"
+            allowfullscreen=""
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+    <!-- Akhir Lokasi -->
+
+    <!-- Footer -->
+    <footer class="bg-[#1A3C2F] text-white pt-20 pb-10">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          <div class="md:col-span-1">
+            <div class="flex items-center gap-2 mb-6">
+              <div
+                class="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center"
+              >
+                <span class="text-white font-bold text-sm">U</span>
+              </div>
+              <span class="text-xl font-extrabold tracking-tight"
+                >UBI<span class="text-orange-500">GO</span></span
+              >
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Menghadirkan kebahagiaan lewat kriuknya Ubi Crispy dan segarnya Es
+              Kuwut asli Surabaya. Snack partner harianmu!
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-bold mb-6 text-lg">Navigasi</h4>
+            <ul class="space-y-4 text-gray-400 text-sm">
+              <li>
+                <a href="#" class="hover:text-orange-500 transition">Beranda</a>
+              </li>
+              <li>
+                <a href="#menu" class="hover:text-orange-500 transition"
+                  >Menu Pilihan</a
+                >
+              </li>
+              <li>
+                <a href="#lokasi" class="hover:text-orange-500 transition"
+                  >Lokasi Kami</a
+                >
+              </li>
+              <li>
+                <a href="#testimoni" class="hover:text-orange-500 transition"
+                  >Testimoni</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold mb-6 text-lg">Hubungi Kami</h4>
+            <ul class="space-y-4 text-gray-400 text-sm">
+              <li class="flex items-center gap-3">
+                <span class="text-orange-500">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </span>
+                Surabaya, Jawa Timur
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="text-orange-500">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                    />
+                  </svg>
+                </span>
+                +62 812-3456-789
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="text-orange-500">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
+                </span>
+                halo@ubigo.me
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold mb-6 text-lg">Ikuti Kami</h4>
+            <div class="flex gap-4">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange-500 transition group"
+              >
+                <svg
+                  class="w-5 h-5 text-gray-300 group-hover:text-white"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path
+                    d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                  ></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+              <a
+                href="https://wa.me/628123456789"
+                target="_blank"
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#25D366] transition group"
+              >
+                <svg
+                  class="w-5 h-5 fill-gray-300 group-hover:fill-white"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
+                  />
+                </svg>
+              </a>
+            </div>
+            <p class="mt-6 text-xs text-gray-500 leading-relaxed">
+              Dapatkan promo khusus dengan mengikuti media sosial kami.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-white/5 pt-8 text-center text-xs text-gray-500"
+        >
+          <p>© 2026 UBIGO Indonesia. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <!-- Akhir Footer -->
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // Inisialisasi AOS
+      AOS.init({
+        duration: 800,
+        once: true,
+      });
+
+      // Elemen Mobile Menu
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuBackdrop = document.getElementById("menu-backdrop");
+      const menuDrawer = document.getElementById("menu-drawer");
+      const openBtn = document.getElementById("mobile-menu-btn");
+      const closeBtn = document.getElementById("close-menu");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
+
+      // Fungsi Buka Menu
+      openBtn.addEventListener("click", () => {
+        // Tampilkan container utama
+        mobileMenu.classList.remove("invisible");
+
+        // Beri jeda sedikit agar transisi CSS berjalan
+        setTimeout(() => {
+          menuBackdrop.classList.add("opacity-100");
+          menuDrawer.classList.remove("translate-x-full");
+        }, 10);
+      });
+
+      // Fungsi Tutup Menu
+      const hideMenu = () => {
+        menuBackdrop.classList.remove("opacity-100");
+        menuDrawer.classList.add("translate-x-full");
+
+        // Sembunyikan container setelah transisi selesai (300ms)
+        setTimeout(() => {
+          mobileMenu.classList.add("invisible");
+        }, 300);
+      };
+
+      // Event Listeners
+      closeBtn.addEventListener("click", hideMenu);
+      menuBackdrop.addEventListener("click", hideMenu); // Klik area redup untuk tutup
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", hideMenu); // Klik link otomatis tutup
+      });
+    </script>
+
+    <style>
+      @keyframes spin-slow {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .animate-spin-slow {
+        animation: spin-slow 12s linear infinite;
+      }
+    </style>
+  </body>
+</html>
